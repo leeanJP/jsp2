@@ -1,0 +1,58 @@
+액션 태그
+JSP 표준 태그 >> 페이지 사이 이동제어 or 자바빈즈 생성할 때 사용
+기본 형태 <jsp:태그명/>
+
+태그 처럼 보이지만 WAS(웹 애플리케이션 서버)를 통해 JSP가 수행된다.
+
+특징
+- xml문법을 따른다
+- 종료태그가 있어야한다
+- 태그사이에 주석 사용 X
+- 태그사이에 표현식<%=%> 사용 가능
+
+<jsp:include>
+<jsp:forward>
+<jsp:useBean><jsp:setProperty><jsp:getProperty>
+<jsp:param>
+
+
+<jsp:include>
+현재jsp파일에 다른 jsp 파일 포함시길 때 사용한다.
+
+<%@%> 페이지 지시어랑 어떤 차이가 있나?
+
+
+<jsp:forward>
+포워드는 현재 페이지에 들어온 요청을 다음 페이지로 보내는 역할
+request 객체를 공유한다
+
+
+<jsp:useBean>
+자바빈즈를 생성하거나 설정할 때 사용한다.
+<jsp:useBean id="자바빈즈 이름" class="사용할 패키지와 클래스명" scope="저장될영역"/>
+
+<jsp:setProperty>
+<jsp:getProperty>
+변수 값을 설정하고 가져오는 것
+<jsp:setProperty name="자바빈즈 이름" property="속성명" vlaue="설정할 값"/>
+<jsp:getProperty name="자바빈즈 이름" property="속성명"/>
+
+
+<jsp:param>
+액션 태그 include나 forward 사용할 때 다른 페이지에 값을 전달하는 기능
+String
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

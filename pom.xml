@@ -42,43 +42,50 @@
             <artifactId>ojdbc10</artifactId>
             <version>19.17.0.0</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/jakarta.servlet/jakarta.servlet-api -->
+
+
+
+        <!-- https://mvnrepository.com/artifact/javax.servlet.jsp/jsp-api -->
         <dependency>
-            <groupId>jakarta.servlet</groupId>
-            <artifactId>jakarta.servlet-api</artifactId>
-            <version>6.0.0</version>
+            <groupId>javax.servlet.jsp</groupId>
+            <artifactId>jsp-api</artifactId>
+            <version>2.2</version>
             <scope>provided</scope>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-jsp-api -->
-        <dependency>
-            <groupId>org.apache.tomcat</groupId>
-            <artifactId>tomcat-jsp-api</artifactId>
-            <version>9.0.83</version>
-        </dependency>
         <!-- https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-catalina -->
         <dependency>
             <groupId>org.apache.tomcat</groupId>
             <artifactId>tomcat-catalina</artifactId>
             <version>9.0.79</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/javax.servlet.jsp.jstl/javax.servlet.jsp.jstl-api -->
         <dependency>
-            <groupId>jakarta.servlet.jsp.jstl</groupId>
-            <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
-            <version>3.0.0</version>
+            <groupId>javax.servlet.jsp.jstl</groupId>
+            <artifactId>javax.servlet.jsp.jstl-api</artifactId>
+            <version>1.2.1</version>
+            <scope>provided</scope>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/jakarta.el/jakarta.el-api -->
+
+        <!-- https://mvnrepository.com/artifact/javax.el/el-api -->
         <dependency>
-            <groupId>jakarta.el</groupId>
-            <artifactId>jakarta.el-api</artifactId>
-            <version>5.0.0</version>
+            <groupId>javax.el</groupId>
+            <artifactId>el-api</artifactId>
+            <version>2.2</version>
         </dependency>
+
         <!-- https://mvnrepository.com/artifact/org.apache.taglibs/taglibs-standard-impl -->
         <dependency>
             <groupId>org.apache.taglibs</groupId>
             <artifactId>taglibs-standard-impl</artifactId>
             <version>1.2.5</version>
             <scope>runtime</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.jfinal/cos -->
+        <dependency>
+            <groupId>com.jfinal</groupId>
+            <artifactId>cos</artifactId>
+            <version>2022.2</version>
         </dependency>
 
     </dependencies>

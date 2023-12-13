@@ -44,4 +44,13 @@
         <param-name>POSTS_PER_BLOCK</param-name>
         <param-value>5</param-value>
     </context-param>
+
+    <servlet>
+        <servlet-name>HelloServlet</servlet-name>
+        <servlet-class>com.servlet.HelloServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HelloServlet</servlet-name>
+        <url-pattern>/13/HelloServlet.do</url-pattern>
+    </servlet-mapping>
 </web-app>

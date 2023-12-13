@@ -53,4 +53,17 @@
         <servlet-name>HelloServlet</servlet-name>
         <url-pattern>/13/HelloServlet.do</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>MemberAuth</servlet-name>
+        <servlet-class>com.servlet.MemberAuth</servlet-class>
+        <init-param>
+            <param-name>admin_id</param-name>
+            <param-value>nakja</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MemberAuth</servlet-name>
+        <url-pattern>/13/MemberAuth.mvc</url-pattern>
+    </servlet-mapping>
 </web-app>

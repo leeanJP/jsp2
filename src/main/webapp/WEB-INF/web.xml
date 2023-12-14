@@ -74,5 +74,16 @@
         <servlet-name>MVCBoardList</servlet-name>
         <url-pattern>/mvcboard/list.do</url-pattern>
     </servlet-mapping>
-
+    <servlet>
+        <servlet-name>MVCBoardWrite</servlet-name>
+        <servlet-class>com.model2.mvcboard.WriteController</servlet-class>
+        <multipart-config>
+            <max-file-size>1048576</max-file-size>
+            <max-request-size>10485760</max-request-size>
+        </multipart-config>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MVCBoardWrite</servlet-name>
+        <url-pattern>/mvcboard/write.do</url-pattern>
+    </servlet-mapping>
 </web-app>

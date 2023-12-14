@@ -3,7 +3,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>파일 첨부형 게시판</title>
     <style>a{text-decoration: none;}</style>
 </head>
 <body>

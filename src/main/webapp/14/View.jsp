@@ -7,7 +7,7 @@
 </head>
 <body>
     <h2>파일 첨부형 게시판 - 상세 보기</h2>
-
+커밋테스트용 텍스트 추가 
     <table border="1" width="90%">
         <col width="15%"/>
         <col width="35%"/>

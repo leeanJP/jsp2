@@ -53,7 +53,7 @@
             <td>다운로드 수</td>
             <td>${dto.downcount}</td>
         </tr>
-
+asdasdasd
         <%--하단 메뉴--%>
         <tr>
             <td colspan="4" align="center">

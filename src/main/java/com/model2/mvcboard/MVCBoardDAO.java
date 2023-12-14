@@ -159,4 +159,86 @@ public class MVCBoardDAO extends DBConnPool {
             e.printStackTrace();
         }
     }
+
+    //다운로드 수 증가
+    public void updateDownCount(String idx){
+        //쿼리문
+        String query = "UPDATE mvcboard SET "
+                +"downcount = downcount +1"
+                +" WHERE idx =?";
+        try {
+            psmt = con.prepareStatement(query);
+            psmt.setString(1, idx);
+            rs = psmt.executeQuery();
+        }catch (Exception e){
+            System.out.println("updateDownCount 오류 발생");
+            e.printStackTrace();
+        }
+    }
+
+    //입력한 비밀번호가 지정한 idx 게시물의 비밀번호와 일치하는 지 확인
+    public boolean confirmPassword(String pass, String idx){
+        boolean isCorr = true;
+
+        try {
+            String sql  = "SELECT COUNT(*) FROM mvcboard WHERE pass =? AND idx=?";
+            psmt = con.prepareStatement(sql);
+            psmt.setString(1,pass);
+            psmt.setString(2,idx);
+            rs = psmt.executeQuery();
+
+            rs.next();
+            if(rs.getInt(1) == 0){
+                isCorr = false;
+            }
+        }catch (Exception e){
+            isCorr = false;
+            System.out.println("confirmPassword 오류 발생");
+            e.printStackTrace();
+        }
+        return isCorr;
+    }
+
+    //게시글 삭제
+    public int deletePost(String idx){
+        int result = 0;
+        try {
+            String query = "DELETE FROM mvcboard WHERE idx =?";
+            psmt = con.prepareStatement(query);
+            psmt.setString(1,idx);
+            result = psmt.executeUpdate();
+
+        }catch (Exception e){
+            System.out.println("deletePost 오류 발생");
+            e.printStackTrace();
+        }
+        return result;
+    }
+
+    //게시글 수정
+    public int updatePost(MVCBoardDTO dto){
+        int result =0;
+        try {
+            //쿼리문 작성
+            String query = "UPDATE mvcboard"
+                    + " SET title=?, name=?, content=?,ofile=?,sfile=?"
+                    + " WHERE idx=? AND pass=?";
+
+            psmt = con.prepareStatement(query);
+            psmt.setString(1,dto.getTitle());
+            psmt.setString(2,dto.getName());
+            psmt.setString(3,dto.getContent());
+            psmt.setString(4,dto.getOfile());
+            psmt.setString(5,dto.getSfile());
+            psmt.setString(6,dto.getIdx());
+            psmt.setString(7,dto.getPass());
+
+            result = psmt.executeUpdate();
+        }catch (Exception e){
+            System.out.println("updatePost 오류 발생");
+            e.printStackTrace();
+        }
+
+        return result;
+    }
 }

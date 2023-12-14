@@ -3,6 +3,7 @@ package com.fileupload;
 import com.util.JSFunction;
 
 import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
@@ -92,6 +93,15 @@ public class FileUtil {
         }catch (Exception e){
             System.out.println("파일 다운로드 중 예외 발생");
             e.printStackTrace();
+        }
+    }
+
+    //파일삭제
+    public static void deleteFile(HttpServletRequest req, String dir, String filename){
+        String sDir = req.getServletContext().getRealPath(dir);
+        File file = new File(sDir + File.separator + filename);
+        if(file.exists()){
+            file.delete();
         }
     }
 

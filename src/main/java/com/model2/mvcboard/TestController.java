@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
@@ -18,17 +19,14 @@ import java.util.Map;
 public class TestController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setCharacterEncoding("UTF-8");
-        resp.setContentType("text/html;charset=utf-8");
-
-        String mode = req.getParameter("mode");
-        String param1 = req.getParameter("param1");
-        Map<String, Object> param = new HashMap<>();
-        System.out.println(mode + " :: " + param1);
+        BufferedReader reader = req.getReader();
+        String str = reader.readLine();
+        System.out.println(str);
+        Map<String, Object> map = new HashMap<>();
 
         JSONObject json = new JSONObject();
         BoardDAO dao = new BoardDAO();
-        List<BoardDTO> boardList = dao.selectList(param);
+        List<BoardDTO> boardList = dao.selectList(map);
         json.put("boardList", boardList);
 
         resp.setContentType("application/x-json; charset=utf-8");

@@ -89,12 +89,14 @@
             // });
 
             $("#test").on("click",function (){
+                let param = {mode:"모드", param1:"파라메터"};
                 $.ajax({
                     url: "../test.do",
                     type: 'POST',
                     contentType : 'application/json; charset=UTF-8',
                     dataType: 'json',
-                    data : JSON.stringify({mode:"모드", param1:"파라메터"}),
+                    //data :param,
+                    data :JSON.stringify(param),
                     success: function (data) {
                         console.log("데이터 값 : " + JSON.stringify(data));
                     },

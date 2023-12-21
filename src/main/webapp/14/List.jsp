@@ -74,11 +74,11 @@
         </tr>
     </table>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <script src="<c:url value="/js/test.js"/>"></script>
+    <script src="<c:url value="/js/test.mjs"/>"></script>
     <script>
 
         $(document).ready(function() {
-            INDEX.test();
+            //INDEX.test();
         });
     </script>
 

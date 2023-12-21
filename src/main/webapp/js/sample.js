@@ -2,7 +2,7 @@ var INDEX = {};
 
 INDEX.init = function () {
     INDEX.initTemplate();
-    
+    INDEX.testFunction();
 
 
 
@@ -16,4 +16,8 @@ INDEX.initTemplate = function (){
 
 INDEX.함수생성 = function (){
 
+}
+
+INDEX.testFunction = function (){
+    console.log("test");
 }
